@@ -2,7 +2,9 @@ import polars
 
 
 def polars_streaming(fname):
-    return (polars.scan_csv(fname)
+    dtypes = {f"column{i}": (polars.UInt32 if i == 0 else polars.Float32())
+              for i in range(9)}
+    return (polars.scan_csv(fname, dtypes=dtypes)
                   .select(
                       polars.sum_horizontal(polars.all()
                                                   .exclude("0")
