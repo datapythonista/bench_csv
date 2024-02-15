@@ -1,0 +1,18 @@
+[project]
+name = "bench_csv"
+version = "0.1.0"
+description = "Add a short description here"
+authors = ["Marc Garcia <garcia.marc@gmail.com>"]
+channels = ["conda-forge"]
+platforms = ["linux-64"]
+
+[tasks]
+bench = "python -m python_benchmarks"
+
+[dependencies]
+pyarrow = "15.0.0.*"
+numpy = "1.26.4.*"
+pandas = "2.2.0.*"
+polars = "0.20.8.*"
+datafusion = "34.0.0.*"
+python-duckdb = "0.9.2.*"
