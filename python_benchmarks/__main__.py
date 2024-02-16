@@ -14,7 +14,8 @@ def main():
         benchmark_function = getattr(module, function_name)
 
         start = time.time()
-        benchmark_function(data_fname)
+        # We must print to materialize as not every solution does that.
+        print(benchmark_function(data_fname))
         elapsed = time.time() - start
         print(f"{function_name},{elapsed}")
 
