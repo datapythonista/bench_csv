@@ -26,7 +26,8 @@ def datafusion_sql(fname):
                          fname,
                          has_header=False,
                          schema=schema)
-    return context.sql(QUERY)
+
+    return context.sql(QUERY).collect()
 
 
 if __name__ == "__main__":

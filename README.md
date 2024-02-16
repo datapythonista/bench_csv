@@ -4,12 +4,15 @@ To run the benchmarks install [Pixi](https://prefix.dev/), clone this repository
 and from inside the repository directory run:
 
 ```sh
-gzip -d data.csv.gz
+gzip -dk data.csv.gz
 pixi install
 pixi run bench
 ```
 
-The results in my machine:
+## Results
+
+The results of processing the CSV  file (not counting the time to initialize the Python interpreter or
+load libraries) are next:
 
 | Description                                           | File / Function      | Time (seconds)        |
 |-------------------------------------------------------|----------------------|-----------------------|
@@ -19,10 +22,11 @@ The results in my machine:
 | pandas with Python engine                             | pandas_python        | 8.328583478927612     |
 | pandas with PyArrow engine and NumPy dtypes           | pandas_pyarrow       | 0.31276631355285645   |
 | pandas with PyArrow engine and PyArrow dtypes         | pandas_pyarrow_arrow | 0.29172492027282715   |
-| Polars in lazy mode                                   | polars_lazy          | 0.1676042079925537    |
-| Polars in streaming mode                              | polars_streaming     | 0.11536002159118652   |
-| DuckDB with SQL API                                   | duckdb_sql           | 0.10763740539550781   |
-| DataFusion with SQL API                               | datafusion_sql       | 0.0019359588623046875 |
+| Polars in lazy mode                                   | polars_lazy          | 0.10555672645568848   |
+| Polars in streaming mode                              | polars_streaming     | 0.11504125595092773   |
+| Polars with SQL API                                   | polars_sql           | 0.09796714782714844   |
+| DuckDB with SQL API                                   | duckdb_sql           | 0.8167853355407715    |
+| DataFusion with SQL API                               | datafusion_sql       | 0.20633697509765625   |
 | NumPy with loadtxt function                           | numpy_loadtxt        | 1.8354885578155518    |
 
 
