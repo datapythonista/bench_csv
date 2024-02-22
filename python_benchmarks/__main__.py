@@ -15,7 +15,7 @@ def main():
 
         start = time.time()
         str(benchmark_function(data_fname))
-        elapsed = time.time() - start
+        elapsed = int((time.time() - start) * 1000)
         print(f"{function_name},{elapsed}")
 
 

@@ -16,7 +16,7 @@ QUERY = """
 """
 
 def duckdb_sql(fname):
-    return str(duckdb.sql(QUERY.format(fname)))
+    return duckdb.sql(QUERY.format(fname)).fetchall()
 
 
 if __name__ == "__main__":
