@@ -15,6 +15,7 @@ QUERY = """
     ) < 1e16
 """
 
+
 def duckdb_sql(fname):
     return duckdb.sql(QUERY.format(fname)).fetchall()
 

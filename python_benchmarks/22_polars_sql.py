@@ -15,9 +15,11 @@ QUERY = """
     ) < 10000000000000000
 """
 
+
 def polars_sql(fname):
-    dtypes = {f"column{i}": (polars.UInt32 if i == 0 else polars.Float32())
-              for i in range(9)}
+    dtypes = {
+        f"column{i}": (polars.UInt32 if i == 0 else polars.Float32()) for i in range(9)
+    }
     context = polars.SQLContext(data=polars.scan_csv(fname, dtypes=dtypes))
     return context.execute(QUERY, eager=True)
 

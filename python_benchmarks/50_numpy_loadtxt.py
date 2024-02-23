@@ -3,10 +3,9 @@ import numpy
 
 def numpy_loadtxt(fname):
     return numpy.sum(
-            numpy.sqrt(
-                numpy.sum(numpy.loadtxt(fname, delimiter=",")[:, 1:] ** 2,
-                          axis=1)
-            ) < 1e16)
+        numpy.sqrt(numpy.sum(numpy.loadtxt(fname, delimiter=",")[:, 1:] ** 2, axis=1))
+        < 1e16
+    )
 
 
 if __name__ == "__main__":

@@ -17,4 +17,3 @@ def pure_python_float(fname):
 
 if __name__ == "__main__":
     print(pure_python_float("data.csv"))
-
